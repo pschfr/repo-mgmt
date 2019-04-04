@@ -6,6 +6,7 @@
     "start": "DEBUG=repo-mgmt:* node ./bin/www"
   },
   "dependencies": {
+    "@octokit/rest": "^16.23.2",
     "@primer/css": "^12.2.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
