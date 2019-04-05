@@ -10,3 +10,17 @@ block content
         h3
           a(href=repo.html_url target="_blank")= repo.name
         p= repo.description
+        .clearfix
+          .col-6.float-left
+            if repo.language
+              != octicons.ruby.toSVG()
+              strong  Language:
+              br
+              = repo.language
+          .col-6.float-left
+            if repo.license
+              != octicons.law.toSVG()
+              strong  License:
+              br
+              = repo.license.spdx_id
+          
