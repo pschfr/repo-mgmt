@@ -45,4 +45,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+// App locals are variables used anywhere throughout the app.
+// Here they are used to properly include Octicons on every page.
+app.locals.octicons = require('octicons');
+
 module.exports = app;

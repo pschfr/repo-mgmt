@@ -11,8 +11,6 @@ var octokit = new Octokit({
   }
 });
 
-var octicons = require('octicons');
-
 /* GET home page. */
 router.get('/', function(req, res, next) {
   
@@ -24,7 +22,7 @@ router.get('/', function(req, res, next) {
   octokit.paginate('GET /users/:username/repos', { username: 'pschfr' }).then(data => {
     // console.log(data)
     // Render the page
-    res.render('index', { title: 'Repo Management', repos: data, octicons: octicons });
+    res.render('index', { title: 'Repo Management', repos: data });
   })
 });
 
