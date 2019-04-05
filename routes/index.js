@@ -1,8 +1,15 @@
 var express = require('express');
 var router = express.Router();
 
+var dotenv = require('dotenv').config();
+
 var Octokit = require('@octokit/rest');
-var octokit = new Octokit();
+var octokit = new Octokit({
+  auth: {
+    clientId: process.env.GITHUB_CLIENT_ID,
+    clientSecret: process.env.GITHUB_CLIENT_SECRET
+  }
+});
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
