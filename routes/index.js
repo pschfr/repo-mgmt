@@ -19,10 +19,10 @@ router.get('/', function(req, res, next) {
    * Using the paginate endpoint gives us all the repos at once,
    * rather than the manual pagination the listForUser endpoint returns.
    */
-  octokit.paginate('GET /users/:username/repos', { username: 'pschfr' }).then(data => {
+  octokit.paginate('GET /users/:username/repos', { username: req.app.locals.username }).then(data => {
     // console.log(data)
     // Render the page
-    res.render('index', { title: 'Repo Management', repos: data });
+    res.render('index', { title: req.app.locals.name, repos: data });
   })
 });
 

@@ -48,5 +48,10 @@ app.use(function(err, req, res, next) {
 // App locals are variables used anywhere throughout the app.
 // Here they are used to properly include Octicons on every page.
 app.locals.octicons = require('octicons');
+// Here they are used to set certain global text strings
+app.locals.name = 'Repo Management';
+app.locals.short_name = 'repo-mgmt';
+app.locals.username = 'pschfr';
+app.locals.source = 'https://github.com/pschfr/repo-mgmt/';
 
 module.exports = app;
