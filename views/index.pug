@@ -3,9 +3,10 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
-  ul
+  .container-lg.clearfix
     each repo in repos
       //- - console.log(repo)
-      li
-        h3= repo.name
+      .col-4.float-left.border.p-4
+        h3
+          a(href=repo.html_url target="_blank")= repo.name
         p= repo.description
