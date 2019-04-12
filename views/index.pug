@@ -1,15 +1,17 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
   .container-lg.clearfix
+    h1= title
     each repo in repos
-      //- - console.log(repo)
       .col-4.float-left.border.p-4
-        h3
+        h3.mb-1
           a(href=repo.html_url target="_blank")= repo.name
-        p= repo.description
+        if repo.homepage
+          p.mb-1
+            a(href=repo.homepage target="_blank")= repo.homepage
+        p.my-3= repo.description
+        hr.my-3
         .clearfix
           .col-6.float-left
             if repo.language
@@ -23,4 +25,3 @@ block content
               strong  License:
               br
               = repo.license.spdx_id
-          
