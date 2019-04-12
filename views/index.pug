@@ -10,6 +10,17 @@ block content
         if repo.homepage
           p.mb-1
             a(href=repo.homepage target="_blank")= repo.homepage
+        hr.my-3
+        .clearfix
+          .col-6.float-left
+            != octicons.star.toSVG()
+            strong  Stars: 
+            = repo.stargazers_count
+          .col-6.float-left
+            != octicons['repo-forked'].toSVG()
+            strong  Forks: 
+            = repo.forks_count
+        hr.my-3
         p.my-3= repo.description
         hr.my-3
         .clearfix
