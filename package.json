@@ -18,8 +18,8 @@
   },
   "homepage": "https://github.com/pschfr/repo-mgmt",
   "dependencies": {
-    "@octokit/rest": "^16.23.2",
-    "@primer/css": "^12.2.1",
+    "@octokit/rest": "^16.23.4",
+    "@primer/css": "^12.2.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "dotenv": "^7.0.0",
