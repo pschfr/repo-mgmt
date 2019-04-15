@@ -5,7 +5,12 @@ block content
     h1= title
     each repo in repos
       .col-4.float-left.border.p-4
-        h3.mb-1
+        if repo.fork
+          != octicons['repo-forked'].toSVG()
+        else
+          != octicons.repo.toSVG()
+        h3.mb-1.d-inline-block
+          | &nbsp;
           a(href=repo.html_url target="_blank")= repo.name
         if repo.homepage
           p.mb-1
